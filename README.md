@@ -1,4 +1,5 @@
 ## Giphy API: Angular Edition
-[ ] set up .gitignore, readme and directories/files
-[ ] create html
-[ ] spin up server
+[X] set up .gitignore, readme and directories/files
+[X] create html
+[X] spin up server
+[X] connect index and spin up on local host
