@@ -3,3 +3,6 @@
 [X] create html
 [X] spin up server
 [X] connect index and spin up on local host
+[X] $http request to giphy api's
+[X] use angular to put on DOM
+[ ] make pretty with bootstrap

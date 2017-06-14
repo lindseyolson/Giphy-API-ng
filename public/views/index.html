@@ -2,10 +2,23 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <script src="vendors/angular.min.js" charset="utf-8"></script>
+    <script src="scripts/client.js" charset="utf-8"></script>
     <title>Giphy Api: Angular Edition</title>
   </head>
-  <body>
+  <body ng-app='app'>
     <h1>Angular Giphy Api's</h1>
+    <div ng-controller='GiphyController as gc' ng-init='gc.getRandomGiphy()'>
+      <button ng-click='gc.getRandomGiphy()'>random</button>
+      <input type="text" placeholder="search" ng-model='gc.searchInput'/>
+      <button ng-click='gc.searchForGiphy()'>search</button>
+      <div id="randomOutput">
+        <img ng-show='gc.showGif' ng-src='{{ gc.responseRandom }}' alt='giphy'/>
+      </div>
+      <div id="searchOutput" ng-repeat= 'gif in gc.response'>
+        <img ng-hide='gc.showGif' ng-src="{{ gif.images.downsized.url }}" alt="giphy">
+      </div>
+    </div>
 
   </body>
 </html>

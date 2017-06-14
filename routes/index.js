@@ -9,6 +9,5 @@ router.get('/', function( req, res ){
   res.sendFile(path.resolve ('public/views/index.html'));
 });
 
-
 // export router
 module.exports = router;
