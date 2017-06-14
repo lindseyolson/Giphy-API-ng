@@ -2,30 +2,23 @@ var app = angular.module ('app', []);
 
 app.controller ('GiphyController', GiphyController);
 
-function GiphyController($http){
+function GiphyController( GiphyService ){
   console.log('NG');
   var vm = this;
   vm.showGif = true;
 
-
   vm.getRandomGiphy = function(){
+  GiphyService.getRandomGiphy().then(function(response){
     vm.showGif = true;
-    console.log('in getRandomGiphy function');
-    var randomUrl = 'http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC';
-    $http.get(randomUrl).then(function(response){
-      vm.responseRandom = response.data.data.image_url;
-    });
-};// end getRandomGiphy
+    vm.responseRandom = response;
+  });
+}; // end getRandomGiphy
 
-  vm.searchForGiphy = function(){
+  vm.searchForGiphy = function(search) {
+  GiphyService.searchForGiphy(search).then(function(response){
+    console.log(response);
     vm.showGif = false;
-    console.log('in searchForGiphy function');
-    var searchUrl = 'http://api.giphy.com/v1/gifs/search?q=';
-    searchUrl += vm.searchInput;
-    searchUrl += '&api_key=dc6zaTOxFJmzC';
-    $http.get(searchUrl).then(function(response){
-      vm.response = response.data.data;
-    });
-  }; // end searchForGiphy
-
+    vm.response = response;
+  });
+}; // end searchForGiphy
 } // end GiphyController

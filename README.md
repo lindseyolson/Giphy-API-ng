@@ -5,4 +5,5 @@
 [X] connect index and spin up on local host
 [X] $http request to giphy api's
 [X] use angular to put on DOM
+[ ] create a service 
 [ ] make pretty with bootstrap

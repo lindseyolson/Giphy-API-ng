@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <script src="vendors/angular.min.js" charset="utf-8"></script>
     <script src="scripts/client.js" charset="utf-8"></script>
+    <script src="scripts/services/giphy.services.js" charset="utf-8"></script>
     <title>Giphy Api: Angular Edition</title>
   </head>
   <body ng-app='app'>
@@ -11,7 +12,7 @@
     <div ng-controller='GiphyController as gc' ng-init='gc.getRandomGiphy()'>
       <button ng-click='gc.getRandomGiphy()'>random</button>
       <input type="text" placeholder="search" ng-model='gc.searchInput'/>
-      <button ng-click='gc.searchForGiphy()'>search</button>
+      <button ng-click='gc.searchForGiphy(gc.searchInput)'>search</button>
       <div id="randomOutput">
         <img ng-show='gc.showGif' ng-src='{{ gc.responseRandom }}' alt='giphy'/>
       </div>
