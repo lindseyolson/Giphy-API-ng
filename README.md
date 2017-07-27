@@ -1,9 +1,8 @@
 ## Giphy API: Angular Edition
-[X] set up .gitignore, readme and directories/files
-[X] create html
-[X] spin up server
-[X] connect index and spin up on local host
-[X] $http request to giphy api's
-[X] use angular to put on DOM
-[ ] create a service 
-[ ] make pretty with bootstrap
+
+On created server, used Angular's $http abilities to get information from Giphy's API. Search for a word and the Giphy API will return the top image associated with that word.
+
+Angular Service was created to hold the API calls.
+
+###### 6/14/2017
+
